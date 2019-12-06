@@ -13,6 +13,28 @@ permalink: /questions/javascript-questions/index.html
 * What is a closure, and how/why would you use one?
 * What language constructions do you use for iterating over object properties and array items?
 * Can you describe the main difference between the `Array.forEach()` loop and `Array.map()` methods and why you would pick one versus the other?
+
+ `Array.map()` returns a new array with passed callback function executed for each element in the array. `Array.forEach()` just executes the callback function for each array element. It doesn't return.
+ 
+ ```javascript
+ const digits = [1, 3, 5];
+ 
+ const evenDigits = digits.map(e => e*2);
+ 
+ console.log(evenDigits);
+ // [2, 6, 10]
+ 
+ const dummy = digits.forEach(e => e*2);
+ 
+ console.log(dummy);
+ undefined
+ 
+ digits.forEach(e => console.log(e*2));
+ // 2
+ // 6
+ // 10
+ ```
+
 * What's a typical use case for anonymous functions?
 * What's the difference between host objects and native objects?
 * Explain the difference between: `function Person(){}`, `var person = Person()`, and `var person = new Person()`?
